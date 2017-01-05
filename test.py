@@ -1,7 +1,8 @@
 #!flask/bin/python
 import os
 import unittest
-
+from config import basedir
+from app import app, db
 class TestCase(unittest.TestCase):
     def setUp(self):
         # app.config['TESTING'] = True
