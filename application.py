@@ -6,6 +6,14 @@ app = Flask(__name__)
 # template_folder -> change folder templates, static_folder = change static folder
 #app = Flask(__name__, template_folder="templates_finalproject", static_folder="static_finalproject")
 
+# error views
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404.html'), 404
+@app.errorhandler(500)
+def internal_server_error(e):
+	return render_template('500.html'), 500
+
 # view
 @app.route('/')
 def index():
